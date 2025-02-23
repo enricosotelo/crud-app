@@ -27,7 +27,7 @@
                 <label for="quantity">Quantity</label>
                 <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter product quantity" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
