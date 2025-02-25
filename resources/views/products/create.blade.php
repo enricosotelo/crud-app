@@ -9,8 +9,9 @@
 <body>
     <div class="container mt-5">
         <h1>Create Product</h1>
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('product.store') }}">
             @csrf
+            @method('POST')
             <div class="form-group">
                 <label for="name">Product Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name" required>
@@ -24,8 +25,8 @@
                 <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price" required>
             </div>
             <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter product quantity" required>
+                <label for="qty">Quantity</label>
+                <input type="number" class="form-control" id="qty" name="qty" placeholder="Enter product quantity" required>
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
