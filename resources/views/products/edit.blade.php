@@ -20,7 +20,7 @@
     </div>
 
     <div class="container mt-5">
-        <h1 class="text-primary">Create a Product</h1>
+        <h1 class="text-primary">Edit a Product</h1>
         <form method="POST" action="{{ route('product.store') }}">
             @csrf
             @method('POST')

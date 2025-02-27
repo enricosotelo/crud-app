@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
   public function index(){
-    return view('products.index');
+    $products = Product::all();
+    return view('products.index', ['products'=> $products]);
   }
 
   public function create(){
@@ -19,7 +20,7 @@ class ProductController extends Controller
     $data =  $request->validate([
       'name' => 'required',
       'qty' => 'required|numeric',
-      'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+      'price' => 'required|decimal',
       'description' => 'nullable'
     ]);
 
@@ -28,4 +29,8 @@ class ProductController extends Controller
     session()->flash('success', 'Product created successfully!');
     return redirect()->route('product.index');
         }
+
+    public function edit(Product $product){
+        dd($product);
+    }
 }
