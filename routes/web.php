@@ -1,17 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EventController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-Route::get('/product/{product}/view', [ProductController::class, 'view'])->name('product.view');
-Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-Route::post('/product', [ProductController::class, 'store'])->name('product.store');
-Route::get('/product/{product}/edit', [ProductController::class,'edit'])->name('product.edit');
-Route::put('/product/{product}/update', [ProductController::class,'update'])->name('product.update');
-Route::delete('/product/{product}/destroy', [ProductController::class,'destroy'])->name('product.destroy');
+
+Route::get('/events', [EventController::class, 'index'])->name('event.index');
+Route::get('/events/{Events}/view', [EventController::class, 'view'])->name('event.view');
+Route::get('/events/create', [EventController::class, 'create'])->name('event.create');
+Route::post('/events', [EventController::class, 'store'])->name('event.store');
+Route::get('/events/{event}/edit', [EventController::class,'edit'])->name('event.edit');
+Route::put('/events/{event}/update', [EventController::class,'update'])->name('event.update');
+Route::delete('/events/{event}/destroy', [EventController::class,'destroy'])->name('event.destroy');
 

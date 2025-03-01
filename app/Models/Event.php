@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Event extends Model
 {
     protected $fillable = [
+        'type',
         'name',
+        'start_at',
         'description',
-        'qty',
-        'price',
+        'address',
+        'link_address',
+        'price'
     ];
 }
